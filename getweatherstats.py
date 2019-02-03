@@ -2,7 +2,7 @@ import urllib2
 import json
 import datetime
 import sqlite3
-f = urllib2.urlopen('http://api.wunderground.com/api/<<--API KEY HERE -->>/geolookup/conditions/q/GA/Kennesaw.json')
+f = urllib2.urlopen('http://api.wunderground.com/api/<<--API KEY HERE-->>/geolookup/conditions/q/GA/Kennesaw.json')
 json_string = f.read()
 parsed_json = json.loads(json_string)
 location = parsed_json['location']['city']
@@ -21,21 +21,21 @@ longitude = parsed_json['current_observation']['observation_location']['longitud
 timeobserved = parsed_json['current_observation']['observation_time_rfc822']
 mytime = datetime.datetime.now()
 #mytime = datetime.utcfromtimestamp(datetime.now()) 
-print mytime
-print "Current temperature in %s is: %s" % (location, temp_f)
-print "Location: %s" % (location)
-print "Temperature(F): %s" % (temp_f)
-print "Conditions: %s" % (conditions)
-print "Humidity: %s" % (humidity)
-print "Precipitation: %s" % (precipitation)
-print "Pressure: %s" % (pressure)
-print "Dewpoint: %s" % (dewpoint)
-print "Windspeed: %s" % (windspeed)
-print "Wind Direction: %s" % (winddir)
-print "Station ID: %s" % (stationid)
-print "Latitude: %s" % (latitude)
-print "Longitude: %s" % (longitude)
-print "TimeObserved: %s" % (timeobserved)
+#print mytime
+#print "Current temperature in %s is: %s" % (location, temp_f)
+#print "Location: %s" % (location)
+#print "Temperature(F): %s" % (temp_f)
+#print "Conditions: %s" % (conditions)
+#print "Humidity: %s" % (humidity)
+#print "Precipitation: %s" % (precipitation)
+#print "Pressure: %s" % (pressure)
+#print "Dewpoint: %s" % (dewpoint)
+#print "Windspeed: %s" % (windspeed)
+#print "Wind Direction: %s" % (winddir)
+#print "Station ID: %s" % (stationid)
+#print "Latitude: %s" % (latitude)
+#print "Longitude: %s" % (longitude)
+#print "TimeObserved: %s" % (timeobserved)
 f.close()
 
 db=sqlite3.connect('weather.db')
