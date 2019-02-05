@@ -1,4 +1,4 @@
 sudo apt-get update
-sudo apt-get install python
-sudo apt-get install sqlite3
+sudo apt-get install python -y
+sudo apt-get install sqlite3 -y
 
